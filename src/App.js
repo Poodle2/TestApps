@@ -1,19 +1,19 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import Header from "./components/Header";
-import style from "./css/main.css"
 import Users from "./components/Users";
+import AddUser from "./components/AddUser";
+
+
 
 const App = () => {
 	
-
+	
 	return (
 		<div>
 			<Header title='Список користовачів'/>
 			<main>
-				<Users/>
-				<aside></aside>
+				<Users />
 			</main>
-			
 		</div>
 	)
 }
