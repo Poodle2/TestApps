@@ -2,21 +2,16 @@ import React, {useState} from "react";
 
 
 const AddUser = (props) => {
-	const [firstName, setFirstName] = useState('');
-	const [lastName, setLastName] = useState('');
-	const [age, setAge] = useState('');
-	
-	const firstNameInput = 'FirstName'
-	const lastNameInput = 'LastName'
-	const ageInput = 'Age'
+	const [data, setData] = useState({firstName: '', lastName: '', age: ''});
 	
 	return (
+		
 		<form>
-			<input placeholder={firstNameInput} onChange={event => setFirstName(event.target.value)}/>
-			<input placeholder={lastNameInput}  onChange={event => setLastName(event.target.value)}/>
-			<input placeholder={ageInput} onChange={event => setAge(event.target.value)}/>
+			<input placeholder='FirstName' onChange={event => setData(prev => ({...prev ,firstName: event.target.value}))} value={data.firstName}/>
+			<input placeholder='LastName' onChange={event => setData(prev => ({...prev ,firstName: event.target.value}))} value={data.lastName}/>
+			<input placeholder='Age' onChange={event => setData(prev => ({...prev ,firstName: event.target.value}))} value={data.age}/>
 			<button type='button' onClick={() => {
-				props.onAdd({firstName,lastName,age});
+				props.onAdd({data});
 			}
 			}>Добавити
 			</button>
