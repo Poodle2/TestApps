@@ -24,7 +24,7 @@ const Users = () => {
 		return (
 			<div>
 				<UserForm addUser={createUser} reset={reset}/>
-				{arrayUsers.length === 0 ?
+				{arrayUsers.length > 0 ?
 					arrayUsers.map((element) => (
 						<User deleteUser={deleteUserById} key={element.id} user={element}/>
 					))
