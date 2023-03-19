@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import User from "./User";
 import UserForm from "./UserForm";
-import user from "./User";
 
 
 const Users = () => {
