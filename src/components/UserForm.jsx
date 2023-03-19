@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 
 
-const AddUser = (props) => {
+const UserForm = (props) => {
 	const [data, setData] = useState({firstName: '', lastName: '', age: ''});
 	
 	return (
@@ -11,7 +11,7 @@ const AddUser = (props) => {
 			<input placeholder='LastName' onChange={event => setData(prev => ({...prev, lastName: event.target.value}))} value={data.lastName}/>
 			<input placeholder='Age' onChange={event => setData(prev => ({...prev, age: event.target.value}))} value={data.age}/>
 			<button type='button' onClick={() => {
-				props.onAdd({data});
+				props.addUser(data);
 			}
 			}>Добавити
 			</button>
@@ -20,4 +20,4 @@ const AddUser = (props) => {
 	)
 }
 
-export default AddUser
+export default UserForm
